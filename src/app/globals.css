@@ -1,26 +1,130 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* --background: #ffffff;
+  --foreground: #171717; */
+  --font-sans: "Be Vietnam Pro", serif;
+  --font-pops: "Poppins"
 }
 
-@theme inline {
+/* @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
+} */
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* background: var(--background);
+  color: var(--foreground); */
+  width: 100%;
+  overflow-x: hidden;
+  font-family: var(--font-pops);
+  font-family: var(--font-sans);
+  scrollbar-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scrollbar-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+  }
+html::-webkit-scrollbar {
+    display: none;
+  }
+/* html, body, #root {
+  height: 100%;
+  margin: 0;
+} */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes reveal_hero{
+   0% {
+  transform: translateY(-20px);
+  opacity: 0;
+}
+100% {
+  transform: translateY(0);
+  opacity: 1;
+}
+}
+
+.reveal-nav{
+  animation: reveal_hero 0.5s linear;
+}
+.reveal-try-section{
+  animation: reveal_hero 0.25s ease-in;
+}
+.reveal-hero-section{
+  animation: reveal_hero 0.35s ease-in;
+}
+.reveal-next-hero-section{
+  animation: reveal_hero 0.5s ease-in;
+}
+.reveal-get-started-section{
+  animation: reveal_hero 0.75s ease-in;
+}
+.animate-marquee {
+  animation: marquee 5s infinite linear;
+}
+
+.authHero{
+  @apply hidden  md:flex flex-4 bg-[url("/images/reg-image.png")] bg-cover bg-no-repeat bg-center w-[100%]
+}
+.signup-section{
+  @apply flex-2 w-full flex flex-col gap-5 md:gap-10 md:mt-[10px] 
+}
+.mobile-bg{
+  background-image: conic-gradient(#FAFAFA, #969696, #FAFAFA);
+}
+.desktop-bg{
+  background-image: none;
+}
+.account-logo-div{
+  @apply flex flex-col items-start md:items-end px-5 md:px-10 py-5 md:py-0 w-full
+}
+.onsubmit-div{
+  @apply flex flex-col border-1 px-5 justify-center py-10 gap-5 rounded-md border-[#e8e8e8]
+  mx-auto max-w-[400px] md:max-w-[320px]
+}
+.input-class{
+  @apply bg-[#e8e8e8] py-2 px-4 text-[13px] outline-none rounded-md
+}
+.password-input-class{
+  @apply bg-[#e8e8e8] py-2 px-4 pr-10 text-[13px] outline-none rounded-md w-full
+}
+
+
+.signin-section{
+  @apply flex-2  w-full flex  flex-col gap-5 md:gap-10 md:mt-[40px] h-[800px]
+}
+.signin-onsubmit-div{
+  @apply flex flex-col border-1 px-6 justify-center mx-auto py-10 gap-5 rounded-md border-[#e8e8e8]  min-w-[320px]
+}
+
+
+/* Nav Section */
+.nav-section{
+  @apply absolute left-40 top-23 bg-[#FFFFFF] border-[2px] border-solid border-[#F8F8F9] p-[24px] hidden
+  items-center justify-center z-[10] rounded-3xl gap-4 cursor-pointer
 }
