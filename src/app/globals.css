@@ -125,6 +125,18 @@ html::-webkit-scrollbar {
 
 /* Nav Section */
 .nav-section{
-  @apply absolute left-40 top-23 bg-[#FFFFFF] border-[2px] border-solid border-[#F8F8F9] p-[24px] hidden
+  @apply absolute left-40 top-23 bg-[#FFFFFF] border-[2px] border-solid border-[#F8F8F9] p-[24px]
   items-center justify-center z-[10] rounded-3xl gap-4 cursor-pointer
+}
+
+/* Side bar */
+.sidebar-div{
+  @apply flex lg:hidden flex-col fixed top-18 left-0 h-screen pb-[200px] overflow-y-auto
+  w-full bg-[FFFFFFF2] transform transition-transform  duration-600 ease-in-out z-40
+}
+
+/* Header */
+.header-section {
+  @apply fixed w-full flex flex-row justify-between items-center md:py-[30px] md:px-[100px] px-[20px] py-[20px] 
+  border-b-2 border-b-[#F8F8F9] bg-[#FFFFFFF2] z-10 backdrop-blur-md 
 }

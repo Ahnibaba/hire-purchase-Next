@@ -1,8 +1,9 @@
+"use client"
 import React, { Ref } from "react";
 
-interface navs {
+export interface navs {
     "About": boolean;
-    "Investment": boolean;
+    "Investments": boolean;
     "Explore": boolean;
 }
 
@@ -80,16 +81,16 @@ const sidebarData = [
                     "title": "Billboards",
                     "description": "A Strategic Approach to Investing in Billboard Advertising Assets"
                 },
-                // {
-                //   "image" : "https://ik.imagekit.io/rwgk2b4rf/Bill%20Payment.svg?updatedAt=1746608973230",
-                //   "title": "Bill Payment",
-                //   "description": "Organise and pay all your bills easily and seamlessly."
-                // },
-                // {
-                //   "image" : "https://ik.imagekit.io/rwgk2b4rf/Virtual%20Bank%20Account.svg?updatedAt=1746608987551",
-                //   "title": "Virtual Bank Account",
-                //   "description": "Open a Naira virtual bank account for easy topups."
-                // }
+                {
+                  "image" : "https://ik.imagekit.io/rwgk2b4rf/Bill%20Payment.svg?updatedAt=1746608973230",
+                  "title": "Bill Payment",
+                  "description": "Organise and pay all your bills easily and seamlessly."
+                },
+                {
+                  "image" : "https://ik.imagekit.io/rwgk2b4rf/Virtual%20Bank%20Account.svg?updatedAt=1746608987551",
+                  "title": "Virtual Bank Account",
+                  "description": "Open a Naira virtual bank account for easy topups."
+                }
 
 
             ]
@@ -142,13 +143,14 @@ export const NavSection = ({ navs, show, setShow, navSectionMenu }: navSectionPr
 
     return (
         <section
-          className={`nav-section ${show ? "lg:flex": "lg-hidden"}
-          ${activeIndex == 1 ? "left-80" : activeIndex == 2 ? "left-80" : "left-40"}`}
+          className={`absolute left-40 top-23 bg-[#FFFFFF] border-[2px] border-solid border-[#F8F8F9] p-[24px]
+          items-center justify-center z-[10] rounded-3xl gap-4 cursor-pointer ${show ? "lg:flex": "lg-hidden"}
+          ${activeIndex == 1 ? "left-100" : activeIndex == 2 ? "left-120" : "left-40"} hidden`}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
 
         > 
-          <div className={`grid ${activeIndex == 1 ? "grid-cols-2" : activeIndex == 2 ? "grid-cols-2" : "grid-cols-3"} fap-4
+          <div className={`grid ${activeIndex == 1 ? "grid-cols-2" : activeIndex == 2 ? "grid-cols-2" : "grid-cols-3"} gap-4
           ${activeIndex == -1 && "hidden"}`}
           ref={navSectionMenu}
           >
